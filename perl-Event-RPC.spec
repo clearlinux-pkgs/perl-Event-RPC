@@ -4,16 +4,15 @@
 #
 Name     : perl-Event-RPC
 Version  : 1.10
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/J/JR/JRED/Event-RPC-1.10.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/J/JR/JRED/Event-RPC-1.10.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libe/libevent-rpc-perl/libevent-rpc-perl_1.09-1.debian.tar.xz
 Summary  : unknown
 Group    : Development/Tools
 License  : Artistic-1.0 GPL-1.0
-Requires: perl-Event-RPC-license
-Requires: perl-Event-RPC-man
-Requires: perl(AnyEvent)
+Requires: perl-Event-RPC-license = %{version}-%{release}
+BuildRequires : buildreq-cpan
 BuildRequires : perl(AnyEvent)
 
 %description
@@ -29,6 +28,15 @@ classes => { "My::TestModule" => { ... } },
 );
 $server->start;
 
+%package dev
+Summary: dev components for the perl-Event-RPC package.
+Group: Development
+Provides: perl-Event-RPC-devel = %{version}-%{release}
+
+%description dev
+dev components for the perl-Event-RPC package.
+
+
 %package license
 Summary: license components for the perl-Event-RPC package.
 Group: Default
@@ -37,19 +45,11 @@ Group: Default
 license components for the perl-Event-RPC package.
 
 
-%package man
-Summary: man components for the perl-Event-RPC package.
-Group: Default
-
-%description man
-man components for the perl-Event-RPC package.
-
-
 %prep
-tar -xf %{SOURCE1}
-cd ..
 %setup -q -n Event-RPC-1.10
-mkdir -p %{_topdir}/BUILD/Event-RPC-1.10/deblicense/
+cd ..
+%setup -q -T -D -n Event-RPC-1.10 -b 1
+mkdir -p deblicense/
 mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Event-RPC-1.10/deblicense/
 
 %build
@@ -74,12 +74,12 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/perl-Event-RPC
-cp deblicense/copyright %{buildroot}/usr/share/doc/perl-Event-RPC/deblicense_copyright
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Event-RPC
+cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Event-RPC/deblicense_copyright
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -88,30 +88,26 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/AuthPasswdHash.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Client.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Connection.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/LogConnection.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Logger.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Loop.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Loop/AnyEvent.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Loop/Event.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Loop/Glib.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Message.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Message/CBOR.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Message/JSON.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Message/Negotiate.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Message/Sereal.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Message/SerialiserBase.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Message/Storable.pm
-/usr/lib/perl5/site_perl/5.26.1/Event/RPC/Server.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/AuthPasswdHash.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Client.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Connection.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/LogConnection.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Logger.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Loop.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Loop/AnyEvent.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Loop/Event.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Loop/Glib.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Message.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Message/CBOR.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Message/JSON.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Message/Negotiate.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Message/Sereal.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Message/SerialiserBase.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Message/Storable.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Event/RPC/Server.pm
 
-%files license
-%defattr(-,root,root,-)
-/usr/share/doc/perl-Event-RPC/deblicense_copyright
-
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Event::RPC.3
 /usr/share/man/man3/Event::RPC::Client.3
@@ -130,3 +126,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Event::RPC::Message::SerialiserBase.3
 /usr/share/man/man3/Event::RPC::Message::Storable.3
 /usr/share/man/man3/Event::RPC::Server.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Event-RPC/deblicense_copyright
