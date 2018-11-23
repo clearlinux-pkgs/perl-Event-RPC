@@ -4,7 +4,7 @@
 #
 Name     : perl-Event-RPC
 Version  : 1.10
-Release  : 3
+Release  : 4
 URL      : https://cpan.metacpan.org/authors/id/J/JR/JRED/Event-RPC-1.10.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/J/JR/JRED/Event-RPC-1.10.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libe/libevent-rpc-perl/libevent-rpc-perl_1.09-1.debian.tar.xz
