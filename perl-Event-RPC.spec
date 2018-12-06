@@ -88,24 +88,24 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/AuthPasswdHash.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Client.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Connection.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/LogConnection.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Logger.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Loop.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Loop/AnyEvent.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Loop/Event.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Loop/Glib.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Message.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Message/CBOR.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Message/JSON.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Message/Negotiate.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Message/Sereal.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Message/SerialiserBase.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Message/Storable.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Event/RPC/Server.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/AuthPasswdHash.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Client.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Connection.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/LogConnection.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Logger.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Loop.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Loop/AnyEvent.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Loop/Event.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Loop/Glib.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Message.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Message/CBOR.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Message/JSON.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Message/Negotiate.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Message/Sereal.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Message/SerialiserBase.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Message/Storable.pm
+/usr/lib/perl5/vendor_perl/5.28.1Event/RPC/Server.pm
 
 %files dev
 %defattr(-,root,root,-)
