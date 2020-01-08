@@ -4,7 +4,7 @@
 #
 Name     : perl-Event-RPC
 Version  : 1.10
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/J/JR/JRED/Event-RPC-1.10.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/J/JR/JRED/Event-RPC-1.10.tar.gz
 Source1  : http://cdn-fastly.deb.debian.org/debian/pool/main/libe/libevent-rpc-perl/libevent-rpc-perl_1.10-1.debian.tar.xz
@@ -130,21 +130,21 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/AuthPasswdHash.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Client.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Connection.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/LogConnection.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Logger.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Loop.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Loop/AnyEvent.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Loop/Event.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Loop/Glib.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Message.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Message/CBOR.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Message/JSON.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Message/Negotiate.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Message/Sereal.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Message/SerialiserBase.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Message/Storable.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Event/RPC/Server.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/AuthPasswdHash.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Client.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Connection.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/LogConnection.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Logger.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Loop.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Loop/AnyEvent.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Loop/Event.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Loop/Glib.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Message.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Message/CBOR.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Message/JSON.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Message/Negotiate.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Message/Sereal.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Message/SerialiserBase.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Message/Storable.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Event/RPC/Server.pm
